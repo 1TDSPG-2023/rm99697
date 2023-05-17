@@ -137,3 +137,16 @@ th{
 tr:hover{
   background-color: #d6eeee;
 }
+
+.fa-eye{
+  cursor:pointer;
+}
+
+.fa-eye-slash{
+  cursor: pointer;
+}
+
+/* para tirar a seleção \/ */
+div{
+  user-select: none;
+}
