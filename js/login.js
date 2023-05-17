@@ -1,40 +1,40 @@
 
-//CRIANDO LISTA DE OBJETOS
-let listaDeUsuarios = [
-    {
-        nomeCompleto : "Denden da Silva",
-        nomeUsuario : "denden",
-        senhaUsuario : "123456"
-    },
-    {
-        nomeCompleto : "Gersu da Silva",
-        nomeUsuario : "gege",
-        senhaUsuario : "123456"
-    },
-    {
-        nomeCompleto : "José da Silva",
-        nomeUsuario : "jose",
-        senhaUsuario : "123456"
-    },
-    {
-        nomeCompleto : "Paulo das Couves",
-        nomeUsuario : "paulo",
-        senhaUsuario : "123456"
-    },
-    {
-        nomeCompleto : "Mary Help",
-        nomeUsuario : "mary",
-        senhaUsuario : "123456"
-    },
-    {
-        nomeCompleto : "Pedro Silva",
-        nomeUsuario : "pedro",
-        senhaUsuario : "123456"
-    }
-];
+// //CRIANDO LISTA DE OBJETOS
+// let listaDeUsuarios = [
+//     {
+//         nomeCompleto : "Denden da Silva",
+//         nomeUsuario : "denden",
+//         senhaUsuario : "123456"
+//     },
+//     {
+//         nomeCompleto : "Gersu da Silva",
+//         nomeUsuario : "gege",
+//         senhaUsuario : "123456"
+//     },
+//     {
+//         nomeCompleto : "José da Silva",
+//         nomeUsuario : "jose",
+//         senhaUsuario : "123456"
+//     },
+//     {
+//         nomeCompleto : "Paulo das Couves",
+//         nomeUsuario : "paulo",
+//         senhaUsuario : "123456"
+//     },
+//     {
+//         nomeCompleto : "Mary Help",
+//         nomeUsuario : "mary",
+//         senhaUsuario : "123456"
+//     },
+//     {
+//         nomeCompleto : "Pedro Silva",
+//         nomeUsuario : "pedro",
+//         senhaUsuario : "123456"
+//     }
+// ];
 
-//GUARDAR A LISTA DE OBJETOS NO LOCAL-STORAGE
-localStorage.setItem( "listaUser",  JSON.stringify(listaDeUsuarios));
+// //GUARDAR A LISTA DE OBJETOS NO LOCAL-STORAGE
+// localStorage.setItem( "listaUser",  JSON.stringify(listaDeUsuarios));
 
 addEventListener("click", (evt)=>{
     const inputUser = document.querySelector("#idUser");
@@ -43,7 +43,10 @@ addEventListener("click", (evt)=>{
     if(evt.target.id == "btnSubmit"){
         
         try {
-            
+          
+            //Recuperar a lista de usuários do LocalStorage
+            let listaDeUsuarios = JSON.parse(localStorage.getItem("listaUser"));
+
             listaDeUsuarios.forEach((usuario)=>{
                 
                 if(inputUser.value == usuario.nomeUsuario && inputPass.value == usuario.senhaUsuario){
